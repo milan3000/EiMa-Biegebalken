@@ -56,10 +56,12 @@ void moveStepper(){
 
 void runMeasurementSequence(){
   moveToStartPosition();
+  xAxisIndex = 0;
   while(xAxisIndex < numberOfDataPoints){
     measureDistance();
     sendDistanceOverSerial();
     moveStepper();
+    xAxisIndex++;
   }
 }
 
